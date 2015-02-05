@@ -1,0 +1,30 @@
+{
+	"name": "arena-deck-review",
+	"description": "HearthStone arena deck review utility.",
+	"author": "Justin Skinner <sdjustin@gmail.com>",
+	"contributors": [
+		{
+			"name": "Justin Skinner",
+			"email": "sdjustin@gmail.com"
+		}
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sdjustin/arena-deck-review"
+	},
+	"bugs": {
+		"url": "https://github.com/sdjustin/arena-deck-review/issues"
+ 	},
+	"keywords": [
+		"hearthstone",
+		"arena",
+		"deck"
+	],
+	"dependencies": {
+
+	},
+	"devDependencies": {
+		"gulp": "~3.8.10"
+	},
+	"license": "GPL"
+}
