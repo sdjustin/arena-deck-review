@@ -210,51 +210,50 @@
 
 	var HomePage = React.createClass({displayName: "HomePage",
 
-	  statics: {
-	    layout: App
-	  },
+		statics: {
+			layout: App
+		},
 
-	  componentWillMount:function() {
-	    PageActions.set({title: 'React.js Starter Kit'});
-	  },
+		componentWillMount:function() {
+			PageActions.set({title: 'React.js Starter Kit'});
+		},
 
-	  render:function() {
-	    return (
-	      /* jshint ignore:start */
-	      React.createElement("div", {className: "container"}, 
-	        React.createElement("div", {className: "row"}, 
-	          React.createElement("div", {className: "col-sm-4"}, 
-	            React.createElement("h3", null, "Runtime Components"), 
-	            React.createElement("dl", null, 
-	              React.createElement("dt", null, React.createElement("a", {href: "https://facebook.github.io/react/"}, "React")), 
-	              React.createElement("dd", null, "A JavaScript library for building user interfaces, developed by Facebook"), 
-	              React.createElement("dt", null, React.createElement("a", {href: "https://github.com/flatiron/director"}, "Director")), 
-	              React.createElement("dd", null, "A tiny and isomorphic URL router for JavaScript"), 
-	              React.createElement("dt", null, React.createElement("a", {href: "http://getbootstrap.com/"}, "Bootstrap")), 
-	              React.createElement("dd", null, "CSS framework for developing responsive, mobile first interfaces")
-	            )
-	          ), 
-	          React.createElement("div", {className: "col-sm-4"}, 
-	            React.createElement("h3", null, "Development Tools"), 
-	            React.createElement("dl", null, 
-	              React.createElement("dt", null, React.createElement("a", {href: "http://gulpjs.com"}, "Gulp")), 
-	              React.createElement("dd", null, "JavaScript streaming build system and task automation"), 
-	              React.createElement("dt", null, React.createElement("a", {href: "http://webpack.github.io/"}, "Webpack")), 
-	              React.createElement("dd", null, "Compiles front-end source code into modules / bundles"), 
-	              React.createElement("dt", null, React.createElement("a", {href: "http://www.browsersync.io/"}, "BrowserSync")), 
-	              React.createElement("dd", null, "A lightweight HTTP server for development")
-	            )
-	          ), 
-	          React.createElement("div", {className: "col-sm-4"}, 
-	            React.createElement("h3", null, "Fork me on GitHub"), 
-	            React.createElement("p", null, React.createElement("a", {href: "https://github.com/kriasoft/react-starter-kit"}, "github.com/kriasoft/react-starter-kit"))
-	          )
-	        )
-	      )
-	      /* jshint ignore:end */
-	    );
-	  }
-
+		render:function() {
+			return (
+				/* jshint ignore:start */
+				React.createElement("div", {className: "container"}, 
+					React.createElement("div", {className: "row"}, 
+						React.createElement("div", {className: "col-sm-4"}, 
+							React.createElement("h3", null, "Runtime Components"), 
+							React.createElement("dl", null, 
+								React.createElement("dt", null, React.createElement("a", {href: "https://facebook.github.io/react/"}, "React")), 
+								React.createElement("dd", null, "A JavaScript library for building user interfaces, developed by Facebook"), 
+								React.createElement("dt", null, React.createElement("a", {href: "https://github.com/flatiron/director"}, "Director")), 
+								React.createElement("dd", null, "A tiny and isomorphic URL router for JavaScript"), 
+								React.createElement("dt", null, React.createElement("a", {href: "http://getbootstrap.com/"}, "Bootstrap")), 
+								React.createElement("dd", null, "CSS framework for developing responsive, mobile first interfaces")
+							)
+						), 
+						React.createElement("div", {className: "col-sm-4"}, 
+							React.createElement("h3", null, "Development Tools"), 
+							React.createElement("dl", null, 
+								React.createElement("dt", null, React.createElement("a", {href: "http://gulpjs.com"}, "Gulp")), 
+								React.createElement("dd", null, "JavaScript streaming build system and task automation"), 
+								React.createElement("dt", null, React.createElement("a", {href: "http://webpack.github.io/"}, "Webpack")), 
+								React.createElement("dd", null, "Compiles front-end source code into modules / bundles"), 
+								React.createElement("dt", null, React.createElement("a", {href: "http://www.browsersync.io/"}, "BrowserSync")), 
+								React.createElement("dd", null, "A lightweight HTTP server for development")
+							)
+						), 
+						React.createElement("div", {className: "col-sm-4"}, 
+							React.createElement("h3", null, "Fork me on GitHub"), 
+							React.createElement("p", null, React.createElement("a", {href: "https://github.com/kriasoft/react-starter-kit"}, "github.com/kriasoft/react-starter-kit"))
+						)
+					)
+				)
+				/* jshint ignore:end */
+			);
+		}
 	});
 
 	module.exports = HomePage;
@@ -1293,17 +1292,16 @@
 
 	module.exports = {
 
-	  /**
-	   * Set metadata for the current page (title, description, keywords etc.).
-	   * @param {object} The page object.
-	   */
-	  set:function(page) {
-	    Dispatcher.handleViewAction({
-	      actionType: ActionTypes.SET_CURRENT_PAGE,
-	      page: assign({}, pageDefaults, page)
-	    });
-	  }
-
+		/**
+		* Set metadata for the current page (title, description, keywords etc.).
+		* @param {object} The page object.
+		*/
+		set:function(page) {
+			Dispatcher.handleViewAction({
+				actionType: ActionTypes.SET_CURRENT_PAGE,
+				page: assign({}, pageDefaults, page)
+			});
+		}
 	};
 
 
@@ -1540,66 +1538,64 @@
 	 * @returns {{title: string}}
 	 */
 	function getState() {
-	  return {
-	    title: PageStore.get().title
-	  };
+		return {
+			title: PageStore.get().title
+		};
 	}
 
 	var DefaultLayout = React.createClass({displayName: "DefaultLayout",
 
-	  mixins: [PageStore.Mixin],
+		mixins: [PageStore.Mixin],
 
-	  getInitialState:function() {
-	    return getState();
-	  },
+		getInitialState:function() {
+			return getState();
+		},
 
-	  componentDidMount:function() {
-	    PageStore.emitChange();
-	  },
+		componentDidMount:function() {
+			PageStore.emitChange();
+		},
 
-	  render:function() {
-	    /* jshint ignore:start */
-	    var header = this.props.children.type.breadcrumb ? (
-	      React.createElement("div", {className: "container"}, 
-	        React.createElement("h2", null, this.state.title), 
-	        this.props.children.type.breadcrumb
-	      )
-	    ) : (
-	      React.createElement("div", {className: "jumbotron"}, 
-	        React.createElement("div", {className: "container text-center"}, 
-	          React.createElement("h1", null, "React"), 
-	          React.createElement("p", null, "Complex web apps made easy")
-	        )
-	      )
-	    );
-	    /* jshint ignore:end */
+		render:function() {
+			/* jshint ignore:start */
+			var header = this.props.children.type.breadcrumb ?
+				(React.createElement("div", {className: "container"}, 
+						React.createElement("h2", null, this.state.title), 
+						this.props.children.type.breadcrumb
+				 )) :
+				(React.createElement("div", {className: "jumbotron"}, 
+					React.createElement("div", {className: "container text-center"}, 
+						React.createElement("h1", null, "React"), 
+						React.createElement("p", null, "Complex web apps made easy")
+					)
+				));
+			/* jshint ignore:end */
 
-	    return (
-	      /* jshint ignore:start */
-	      React.createElement("div", null, 
-	        React.createElement(Navbar, null), 
-	        header, 
-	        this.props.children, 
-	        React.createElement("div", {className: "navbar-footer"}, 
-	          React.createElement("div", {className: "container"}, 
-	            React.createElement("p", {className: "text-muted"}, 
-	              React.createElement("span", null, "© KriaSoft"), 
-	              React.createElement("span", null, React.createElement(Link, {to: "/"}, "Home")), 
-	              React.createElement("span", null, React.createElement(Link, {to: "/privacy"}, "Privacy"))
-	            )
-	          )
-	        )
-	      )
-	      /* jshint ignore:end */
-	    );
-	  },
+			return (
+				/* jshint ignore:start */
+				React.createElement("div", null, 
+					React.createElement(Navbar, null), 
+					header, 
+					this.props.children, 
+					React.createElement("div", {className: "navbar-footer"}, 
+						React.createElement("div", {className: "container"}, 
+							React.createElement("p", {className: "text-muted"}, 
+								React.createElement("span", null, "© KriaSoft"), 
+								React.createElement("span", null, React.createElement(Link, {to: "/"}, "Home")), 
+								React.createElement("span", null, React.createElement(Link, {to: "/privacy"}, "Privacy"))
+							)
+						)
+					)
+				)
+				/* jshint ignore:end */
+			);
+	 	},
 
-	  /**
-	   * Event handler for 'change' events coming from the PageStore.
-	   */
-	  onChange:function() {
-	    this.setState(getState());
-	  }
+		/**
+		* Event handler for 'change' events coming from the PageStore.
+	 	*/
+		onChange:function() {
+			this.setState(getState());
+		}
 	});
 
 	module.exports = DefaultLayout;
@@ -1624,27 +1620,24 @@
 
 	var Link = React.createClass({displayName: "Link",
 
-	  propTypes: {
-	    to: React.PropTypes.string.isRequired
-	  },
+		propTypes: {
+			to: React.PropTypes.string.isRequired
+		},
 
-	  render:function() {
-	    this.props.href =
-	      this.props.to && this.props.to.lastIndexOf('/', 0) === 0 ?
-	      this.props.to : '/' + this.props.to;
+		render:function() {
+			this.props.href = this.props.to && this.props.to.lastIndexOf('/', 0) === 0 ? this.props.to : '/' + this.props.to;
 
-	    return (
-	      /* jshint ignore:start */
-	      React.createElement("a", React.__spread({onClick: this.handleClick},  this.props), this.props.children)
-	      /* jshint ignore:end */
-	    );
-	  },
+			return (
+				/* jshint ignore:start */
+				React.createElement("a", React.__spread({onClick: this.handleClick},  this.props), this.props.children)
+				/* jshint ignore:end */
+			);
+		},
 
-	  handleClick:function(e) {
-	    e.preventDefault();
-	    RouteActions.setRoute(this.props.to);
-	  }
-
+		handleClick:function(e) {
+			e.preventDefault();
+			RouteActions.setRoute(this.props.to);
+		}
 	});
 
 	module.exports = Link;
@@ -1724,16 +1717,13 @@
 
 	module.exports = {
 
-	  defaults: {
-
-	    page: {
-	      title: 'React.js Starter Kit',
-	      description: 'A skeleton for an isomorphic web application (SPA) built with React.js and Flux',
-	      keywords: null
-
-	    }
-	  }
-
+		defaults: {
+			page: {
+				title: 'React.js Starter Kit',
+				description: 'A skeleton for an isomorphic web application (SPA) built with React.js and Flux',
+				keywords: null
+			}
+		}
 	};
 
 
@@ -8515,25 +8505,23 @@
 
 	var PageStore = new Store({
 
-	  /**
-	   * Gets metadata associated with the current page.
-	   * @returns {Page}
-	   */
-	  get:function() {
-	    return _page || __webpack_require__(17).defaults.page;
-	  }
-
+		/**
+		* Gets metadata associated with the current page.
+		* @returns {Page}
+		*/
+		get:function() {
+			return _page || __webpack_require__(17).defaults.page;
+		}
 	});
 
 	PageStore.dispatcherToken = Dispatcher.register(function(payload)  {
 
-	  var action = payload.action;
+		var action = payload.action;
 
-	  if (action.actionType == ActionTypes.SET_CURRENT_PAGE) {
-	    _page = action.page;
-	    PageStore.emitChange();
-	  }
-
+		if (action.actionType == ActionTypes.SET_CURRENT_PAGE) {
+			_page = action.page;
+			PageStore.emitChange();
+		}
 	});
 
 	module.exports = PageStore;
@@ -8558,21 +8546,20 @@
 
 	var Navbar = React.createClass({displayName: "Navbar",
 
-	  render:function() {
-	    return (
-	      /* jshint ignore:start */
-	      React.createElement("div", {className: "navbar-top", role: "navigation"}, 
-	        React.createElement("div", {className: "container"}, 
-	          React.createElement(Link, {className: "navbar-brand row", to: "/"}, 
-	            React.createElement("img", {src: "/images/logo-small.png", width: "38", height: "38", alt: "React"}), 
-	            React.createElement("span", null, "React.js Starter Kit")
-	          )
-	        )
-	      )
-	      /* jshint ignore:end */
-	    );
-	  }
-
+		render:function() {
+			return (
+				/* jshint ignore:start */
+				React.createElement("div", {className: "navbar-top", role: "navigation"}, 
+					React.createElement("div", {className: "container"}, 
+						React.createElement(Link, {className: "navbar-brand row", to: "/"}, 
+							React.createElement("img", {src: "/images/logo-small.png", width: "38", height: "38", alt: "React"}), 
+							React.createElement("span", null, "React.js Starter Kit")
+						)
+					)
+				)
+				/* jshint ignore:end */
+			);
+		}
 	});
 
 	module.exports = Navbar;

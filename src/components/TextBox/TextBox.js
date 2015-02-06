@@ -14,28 +14,27 @@ var React = require('react');
 
 var TextBox = React.createClass({
 
-  propTypes: {
-    maxLines: React.PropTypes.number
-  },
+	propTypes: {
+		maxLines: React.PropTypes.number
+	},
 
-  getDefaultProps() {
-    return {
-      maxLines: 1
-    };
-  },
+	getDefaultProps() {
+		return {
+			maxLines: 1
+		};
+	},
 
-  render() {
-    return (
-      /* jshint ignore:start */
-      <div className="TextBox">
-        {this.props.maxLines > 1 ?
-          <textarea {...this.props} className="TextBox-input" ref="input" key="input" rows={this.props.maxLines} /> :
-          <input {...this.props} className="TextBox-input" ref="input" key="input" />}
-      </div>
-      /* jshint ignore:end */
-    );
-  }
-
+	render() {
+		return (
+			/* jshint ignore:start */
+			<div className="TextBox">
+				{this.props.maxLines > 1 ?
+				<textarea {...this.props} className="TextBox-input" ref="input" key="input" rows={this.props.maxLines} /> :
+				<input {...this.props} className="TextBox-input" ref="input" key="input" />}
+			</div>
+			/* jshint ignore:end */
+		);
+	}
 });
 
 module.exports = TextBox;
