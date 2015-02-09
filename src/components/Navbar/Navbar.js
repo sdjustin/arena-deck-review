@@ -19,8 +19,8 @@ var Navbar = React.createClass({
 			<div className="navbar-top" role="navigation">
 				<div className="container">
 					<Link className="navbar-brand row" to="/">
-						<img src="/images/logo-small.png" width="38" height="38" alt="React" />
-						<span>React.js Starter Kit</span>
+						<img src="/images/card-back.png" width="25" height="38" alt="card back" />
+						<span>Arena Deck Review</span>
 					</Link>
 				</div>
 			</div>

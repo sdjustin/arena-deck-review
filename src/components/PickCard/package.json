@@ -1,0 +1,6 @@
+{
+  "name": "PickCard",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./PickCard.js"
+}

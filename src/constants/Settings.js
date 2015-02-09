@@ -10,8 +10,8 @@ module.exports = {
 
 	defaults: {
 		page: {
-			title: 'React.js Starter Kit',
-			description: 'A skeleton for an isomorphic web application (SPA) built with React.js and Flux',
+			title: 'Arena Deck Review',
+			description: 'HearthStone Arena deck utility.',
 			keywords: null
 		}
 	}
