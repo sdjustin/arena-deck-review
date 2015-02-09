@@ -11,6 +11,7 @@
 require('./PickCard.less');
 
 var React = require('react');
+var TypeAhead = require('../TypeAhead');
 
 var PickCard = React.createClass({
 
@@ -19,7 +20,9 @@ var PickCard = React.createClass({
 	render() {
 		return (
 			/* jshint ignore:start */
-			<div className="well">pick card</div>
+			<div className="well">
+				<TypeAhead id="myTypeahead" array={['Angry Chicken', 'Dummy Target']} placeholder="My Typeahead" />
+			</div>
 			/* jshint ignore:end */
 		);
 	}

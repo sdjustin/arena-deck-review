@@ -1,0 +1,6 @@
+{
+  "name": "TypeAhead",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./TypeAhead.js"
+}
